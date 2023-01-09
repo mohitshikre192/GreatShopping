@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width:device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text" href="product-list.component.css">
+  <title> Product details</title>
+</head>
+<body>
+
+
+  <app-navbar></app-navbar>
+
+
+
+  <div class="container">
+    <div class="row" *ngFor="let product of Bproducts">
+
+      <div class="product">
+
+        <div class="product-img">
+
+          <a routerLink="/product/details/{{product.id}}">
+            <img src={{product.img_url}} height="350" width="300">
+          </a>
+        </div>
+        <div class="product-desc">
+
+          <h2><a routerLink="/product/details/{{product.id}}">{{product.title}}</a></h2>
+
+          <h4>purchased_price:<s>  {{product.purchase_price}} </s></h4>
+          <div>
+            <h4> saleprice:{{product.saleprice}}</h4>
+            <h4>{{product.processor}}</h4>
+            <h4>ram:{{product.ram}}</h4>
+            <h4>rom:{{product.rom}}</h4>
+            <h4>primarycamera:{{product.primarycamera}}</h4>
+            <h4>frontcamera:{{product.frontcamera}}</h4>
+            <h4>Battery:{{product.battery}}</h4>
+
+
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>

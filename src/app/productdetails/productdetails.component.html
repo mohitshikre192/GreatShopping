@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width:device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="productdetails.component.css">
+  <title> Product details</title>
+</head>
+<body>
+  <app-navbar></app-navbar>
+
+  <div class="small-container single-product">
+    <div class="row">
+      <div class="col-2" *ngFor="let product of Dproducts">
+        <img src={{product.img_url}} width="100%" id="productImg">
+
+
+        <a href="/" class="btn" >Add to cart</a>
+        <a href="/" class="btn">Buy </a>
+
+
+
+      </div>
+      <div class="col-2" *ngFor="let product of Dproducts">
+        <h1>{{product.title}} ({{product.ram}}GB RAM , {{product.rom}}GB)</h1>
+        <h4>**** rating & ***** reviews</h4>
+        <h3> saleprice:{{product.saleprice}}</h3>
+
+        <div>
+          <h3>purchased_price:<s>{{product.purchase_price}}</s></h3>
+          <h3>Available offers:</h3>
+
+          <h4>Bank Offer:5% Cashback on Axis Bank Card</h4>
+          <h4>Debit Card EMI ₹1,078/month. Standard EMI also available</h4>
+
+
+
+
+
+
+        </div>
+
+        <h3>Highlights:</h3>
+        <h4>{{product.processor}}</h4>
+        <h4>ram:{{product.ram}}GB</h4>
+        <h4>rom:{{product.rom}}GB</h4>
+        <h4>primarycamera:{{product.primarycamera}}MP</h4>
+        <h4>frontcamera:{{product.frontcamera}}MP</h4>
+        <h4>Battery:{{product.battery}}MAH</h4>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

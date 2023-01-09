@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Great Shopping</title>
+  <link rel="stylesheet" type="text/css" href="product-featured-list.component.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+</head>
+<body>
+
+
+  <div class="small conatiner">
+    <h2 class="title">Featured Products</h2>
+    <div class="row">
+      <div class="col-4" *ngFor="let product of Fproducts">
+        <a routerLink="/product/details/{{product.id}}">
+          <img src={{product.img_url}} height="350" width="300"></a>
+          <h4 class="der" ><a routerLink="/product/details/{{product.id}}">{{product.title }}</a> </h4>
+          <div class="der rating">
+            <i class="der fa fa-star" aria-hidden="true"></i>
+            <i class="der fa fa-star" aria-hidden="true"></i>
+            <i  class="der fa fa-star" aria-hidden="true"></i>
+            <i class="der fa fa-star" aria-hidden="true"></i>
+            <i  class="der fa fa-star-o"></i>
+          </div>
+          <p class="der" >Rs.{{product.saleprice}}</p>
+      </div>
+
+    </div>
+

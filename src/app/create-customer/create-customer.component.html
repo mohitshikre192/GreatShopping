@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<!--{{customer | json}}-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title> Responsive Registration Form | CodingLab </title>
+  <link rel="stylesheet" href="create-customer.component.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Sign Up</div>
+    <div class="content">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details"> Name</span>
+            <input formControlName="Cust_Name" placeholder="Enter your name" minlength="5" required [ngClass]="{ 'is-invalid': submitted && f.Cust_Name.errors }">
+            <div *ngIf="submitted && f.Cust_Name.errors" class="invalid-feedback">
+              <div *ngIf="f.Cust_Name.errors.required">Name is required!</div>
+              </div>
+            </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input formControlName="Phone" placeholder="Enter your number" maxlength="10" required [ngClass]="{ 'is-invalid': submitted && f.Phone.errors }">
+            <div *ngIf="submitted && f.Phone.errors" class="invalid-feedback">
+              <div *ngIf="f.Phone.errors.required">Contact number is required!</div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input formControlName="Email" placeholder="Enter your email" required [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+            <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+              <div *ngIf="f.Email.errors.required" >Email is required !</div>
+            </div>
+            <div *ngIf="f.Email.errors?.email" class="invalid-feedback">
+               Email is not valid.
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input formControlName="Cust_Address" name="Cust_Address" placeholder="Enter your Address" required [ngClass]="{ 'is-invalid': submitted && f.Cust_Address.errors }">
+            <div *ngIf="submitted && f.Cust_Address.errors" class="invalid-feedback">
+              <div *ngIf="f.Cust_Address.errors.required">Address is required!</div>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">City</span>
+            <input formControlName="City" placeholder="Enter your City" required [ngClass]="{ 'is-invalid': submitted && f.City.errors }">
+            <div *ngIf="submitted && f.City.errors" class="invalid-feedback">
+              <div *ngIf="f.City.errors.required">City is required</div>
+            </div>
+          </div>
+
+            <div class="input-box">
+              <span class="details">Pincode</span>
+              <input formControlName="Pincode" placeholder="Enter your pincode" required  [ngClass]="{ 'is-invalid': submitted && f.Pincode.errors }">
+          
+              <div *ngIf="submitted && f.Pincode.errors" class="invalid-feedback">
+                <div *ngIf="f.Pincode.errors.required">Pincode is required!</div>
+              </div>
+            </div>
+
+            <div class="input-box">
+              <span class="details">State</span>
+              <input formControlName="State_" placeholder="Enter your state" required [ngClass]="{ 'is-invalid': submitted && f.State_.errors }">
+              <div *ngIf="submitted && f.State_.errors" class="invalid-feedback">
+                <div *ngIf="f.State_.errors.required">State is required!</div>
+              </div>
+
+            </div>
+
+            <div class="input-box">
+              <span class="details">Date of  Birth</span>
+              <input type="Date" formControlName="DOB" placeholder="Enter your DOB" required [ngClass]="{ 'is-invalid': submitted && f.DOB.errors }">
+              <div *ngIf="submitted && f.DOB.errors" class="invalid-feedback">
+                <div *ngIf="f.DOB.errors.required">Date of Birth is required!</div>
+              </div>
+             
+            </div>
+
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input type="password" formControlName="Cust_Password" name="Cust_Password" placeholder="Enter your password" required [ngClass]="{ 'is-invalid': submitted && f.Cust_Password.errors }">
+              <div *ngIf="submitted && f.Cust_Password.errors" class="invalid-feedback">
+                <span *ngIf="f.Cust_Password.errors.required">Password is required!</span>
+              </div>
+            </div>
+         
+          </div>
+        <div class="button">
+          <input type="submit" value="Register">
+          <a class="btn btn-dark" routerLink="/">back</a>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+
+</body>
+</html>
